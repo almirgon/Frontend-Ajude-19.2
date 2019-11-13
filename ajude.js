@@ -7,12 +7,14 @@
   }
 }());
 
-let templateInicial;
+let templateInicial,templateLogin;
 async function fetch_templates() {
   let html_templates = await (fetch('templates.html').then(r => r.text()));
   let e = document.createElement("div");
   e.innerHTML = html_templates;
+
   templateInicial = e.querySelector('#viewInicial');
+  templateLogin = e.querySelector('#viewLogin');
 }
 
 function viewInicial() {
@@ -25,6 +27,15 @@ function viewInicial() {
 
   let $login = document.querySelector('#login');
   $mensagemInicial.innerText = "Bem vindo";
+
+
+}
+
+function viewLogin() {
+  let $viewer = document.querySelector('#viewer');
+  let $template = templateLogin;;
+  $viewer.innerHTML = $template.innerHTML;
+
 
 
 }
