@@ -4,6 +4,8 @@
   let hash = location.hash;
   if ([""].includes(hash)) {
     viewInicial();
+  } else if (["#login"].includes(hash)) {
+    viewLogin();
   }
 }());
 
@@ -46,6 +48,3 @@ function viewLogin() {
 
 }
 
-function cleanValue(p1) {
-  p1.value = "";
-}
