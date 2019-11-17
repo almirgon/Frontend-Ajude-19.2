@@ -26,16 +26,26 @@ function viewInicial() {
   $mensagemInicial.innerText = "Bem vindo";
 
   let $login = document.querySelector('#login');
-  $mensagemInicial.innerText = "Bem vindo";
+  $login.addEventListener("click", viewLogin);
+
+  let $cadastro = document.querySelector('#cadastro');
+  $cadastro.addEventListener("click", viewLogin);
 
 
 }
 
 function viewLogin() {
+  parent.location.hash = "login";
+
   let $viewer = document.querySelector('#viewer');
   let $template = templateLogin;;
   $viewer.innerHTML = $template.innerHTML;
 
+  let $email = document.querySelector('#email');
 
 
+}
+
+function cleanValue(p1) {
+  p1.value = "";
 }
