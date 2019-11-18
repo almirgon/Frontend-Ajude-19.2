@@ -1,5 +1,6 @@
 import {viewInicial} from "../controllers/viewInicial.js";
 import {templateLogin} from "../controllers/ajude.js";
+import {authToken} from '../model/modelUsers.js';
 
 
 function viewLogin() {
@@ -16,8 +17,27 @@ function viewLogin() {
   $mensagemLogin.innerText = "Login";
   
   let $enter = document.querySelector('#enter');
+  $enter.addEventListener("click", function() {
+    let login = {
+        "email": document.getElementById("email").value,
+        "senha": document.getElementById("senha").value
+    }
 
+    logar(login);
+    
+    });
+    
 
 }
+
+async function logar(login) {
+    let data = await authToken(login);
+   
+    if (data) {
+        sessionStorage.setItem('email', data.email);
+        sessionStorage.setItem('token', data.token);
+        setInterval(() => {window.location.assign("/home.html");}, 1000);
+    }
+};
 
 export {viewLogin};
