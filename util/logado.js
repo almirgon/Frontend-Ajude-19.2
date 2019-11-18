@@ -1,13 +1,15 @@
 function logado() {
-	let logado = JSON.parse(localStorage.getItem("logado"));
-    if (logado === null || (logado.value === false) || (logado.timestamp === (new Date().getTime().toString()))) {
+	let logado = sessionStorage.getItem("logado");
+    if (logado === null || (logado.value === false) || (logado.timestamp - (new Date().getTime()) < 1000)) {
 		
-		let object = {value: false, timestamp: logado.timestamp};
-		sessionStorage.setItem("logado", JSON.stringify(object));
+		let object = {value: false, timestamp: new Date().getTime()};
+		sessionStorage.setItem("logado", object);
 		
 		return false;
 	} else {
 		return true;
 	}
     
-};
+}
+
+export {logado};

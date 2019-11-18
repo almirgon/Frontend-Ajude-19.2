@@ -1,8 +1,10 @@
 import {viewInicial} from "../controllers/viewInicial.js";
 import {viewLogin} from "../controllers/viewLogin.js";
 import {viewCadastro} from "../controllers/viewCadastro.js";
+import {viewHome} from "../controllers/viewHome.js";
+import {logado} from "../util/logado.js";
 
-let templateInicial,templateLogin,templateCadastro;
+let templateInicial,templateLogin,templateCadastro,templateHome;
 
 
 (async function main() {
@@ -10,7 +12,11 @@ let templateInicial,templateLogin,templateCadastro;
 
   let hash = location.hash;
   if ([""].includes(hash)) {
-    viewInicial();
+	  if (logado()) {
+		  viewHome();
+	  } else {
+		  viewInicial();
+	  }
   } else if (["#login"].includes(hash)) {
     viewLogin();
   } else if (["#cadastro"].includes(hash)) {
@@ -26,6 +32,7 @@ async function fetch_templates() {
   templateInicial = e.querySelector('#viewInicial');
   templateLogin = e.querySelector('#viewLogin');
   templateCadastro = e.querySelector('#viewCadastro');
+  templateHome = e.querySelector('#viewHome');
 }
 
 export {templateInicial,templateLogin,templateCadastro};
