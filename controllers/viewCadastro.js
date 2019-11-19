@@ -19,9 +19,9 @@ function viewCadastro() {
   let $enter = document.querySelector('#enter');
   $enter.addEventListener("click", function () {
     let newUser = {
-        "primeiroNome": document.getElementById("primeiroNome").value,
-        "ultimoNome": document.getElementById("ultimoNome").value,
-        "cartao": document.getElementById("cartao").value,
+        "firstName": document.getElementById("firstName").value,
+        "lastName": document.getElementById("lastName").value,
+        "card": document.getElementById("card").value,
         "email": document.getElementById("email").value,
         "password": document.getElementById("password").value
     };

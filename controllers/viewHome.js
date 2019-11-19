@@ -29,7 +29,7 @@ function logoutTotal() {
 }
 
 function logout() {
-	let object = {value: false, timestamp: new Date().getTime()};
+	let object = {value: false, timestamp: new Date().getMilliseconds};
 	sessionStorage.setItem("logado", object);
 }
 

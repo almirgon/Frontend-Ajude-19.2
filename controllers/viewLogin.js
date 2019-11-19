@@ -20,7 +20,7 @@ function viewLogin() {
   $enter.addEventListener("click", function() {
     let login = {
         "email": document.getElementById("email").value,
-        "senha": document.getElementById("senha").value
+        "password": document.getElementById("password").value
     }
 
     logar(login);
@@ -37,7 +37,7 @@ async function logar(login) {
         sessionStorage.setItem('email', data.email);
         sessionStorage.setItem('token', data.token);
         
-        let object = {value: true, timestamp: new Date().getTime()};
+        let object = {value: true, timestamp: new Date().getMilliseconds};
         sessionStorage.setItem("logado", object);
     }
 };
