@@ -4,7 +4,7 @@ import {cadastrarUsuario} from "../model/modelUsers.js";
 
 
 function viewCadastro() {
-  parent.location.hash = "cadastro";
+  parent.location.hash = "cadastro-usuario";
 
   let $viewer = document.querySelector('#viewer');
   let $template = templateCadastro;

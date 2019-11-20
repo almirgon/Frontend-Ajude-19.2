@@ -4,7 +4,7 @@ import {viewCadastro} from "../controllers/viewCadastro.js";
 import {viewHome} from "../controllers/viewHome.js";
 import {logado} from "../util/logado.js";
 
-let templateInicial,templateLogin,templateCadastro,templateHome;
+let templateInicial,templateLogin,templateCadastro,templateHome,templateCadastroCampanha;
 
 
 (async function main() {
@@ -19,7 +19,7 @@ let templateInicial,templateLogin,templateCadastro,templateHome;
 	  }
   } else if (["#login"].includes(hash)) {
     viewLogin();
-  } else if (["#cadastro"].includes(hash)) {
+  } else if (["#cadastro-usuario"].includes(hash)) {
 	viewCadastro();  
   }
 }())
@@ -32,6 +32,7 @@ async function fetch_templates() {
   templateInicial = e.querySelector('#viewInicial');
   templateLogin = e.querySelector('#viewLogin');
   templateCadastro = e.querySelector('#viewCadastro');
+  templateCadastroCampanha = e.querySelector('#viewCadastroCampanha');
   templateHome = e.querySelector('#viewHome');
 }
 

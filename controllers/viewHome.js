@@ -1,3 +1,5 @@
+import {viewLogin} from "../controllers/viewLogin.js";
+import {viewCadastro} from "../controllers/viewCadastro.js";
 import {templateInicial} from "../controllers/ajude.js";
 
 function viewHome() {
@@ -15,6 +17,9 @@ function viewHome() {
   
   let $ranking = document.querySelector('#ranking');
   $ranking.addEventListener("click", viewHome);
+  
+  let $cadastrarCampanha = document.querySelector('#cadastrarCampanha');
+  $cadastrarCampanha.addEventListener("click", viewCadastroCampanha);
 
   let $logout = document.querySelector('#logout');
   $login.addEventListener("click", logoutTotal);
