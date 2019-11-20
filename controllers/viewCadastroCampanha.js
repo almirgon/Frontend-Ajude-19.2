@@ -1,6 +1,7 @@
 import {viewInicial} from "../controllers/viewInicial.js";
 import {templateCadastroCampanha} from "../controllers/ajude.js";
 import {cadastrarCampanha} from "../model/modelCampanha.js";
+import {criarURLCampanha} from "../util/criarURLCampanha.js";
 
 
 function viewCadastroCampanha() {
@@ -32,4 +33,4 @@ function viewCadastroCampanha() {
 
 }
 
-export {viewCadastro};
+export {viewCadastroCampanha};

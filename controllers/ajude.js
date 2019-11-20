@@ -1,8 +1,4 @@
-import {viewInicial} from "../controllers/viewInicial.js";
-import {viewLogin} from "../controllers/viewLogin.js";
-import {viewCadastro} from "../controllers/viewCadastro.js";
-import {viewHome} from "../controllers/viewHome.js";
-import {logado} from "../util/logado.js";
+import {routing} from "../util/routing.js";
 
 let templateInicial,templateLogin,templateCadastro,templateHome,templateCadastroCampanha;
 
@@ -10,18 +6,7 @@ let templateInicial,templateLogin,templateCadastro,templateHome,templateCadastro
 (async function main() {
   let data = await Promise.all([fetch_templates()]);
 
-  let hash = location.hash;
-  if ([""].includes(hash)) {
-	  if (logado()) {
-		  viewHome();
-	  } else {
-		  viewInicial();
-	  }
-  } else if (["#login"].includes(hash)) {
-    viewLogin();
-  } else if (["#cadastro-usuario"].includes(hash)) {
-	viewCadastro();  
-  }
+  routing();
 }())
 
 async function fetch_templates() {
@@ -36,6 +21,6 @@ async function fetch_templates() {
   templateHome = e.querySelector('#viewHome');
 }
 
-export {templateInicial,templateLogin,templateCadastro};
+export {templateInicial,templateLogin,templateCadastro,templateCadastroCampanha,templateHome};
 
 

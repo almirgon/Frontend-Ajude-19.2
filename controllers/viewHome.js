@@ -1,12 +1,12 @@
 import {viewLogin} from "../controllers/viewLogin.js";
 import {viewCadastro} from "../controllers/viewCadastro.js";
-import {templateInicial} from "../controllers/ajude.js";
+import {templateHome} from "../controllers/ajude.js";
 
 function viewHome() {
   parent.location.hash = "";	
 	
   let $viewer = document.querySelector('#viewer');
-  let $template = templateInicial;
+  let $template = templateHome;
   $viewer.innerHTML = $template.innerHTML;
 
   let $mensagemInicial = document.querySelector('#mensagemInicial');

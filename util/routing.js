@@ -7,7 +7,7 @@ import {logado} from "../util/logado.js";
 function routing(){
   let hash = location.hash;
   if ([""].includes(hash)) {
-	  if (false) {
+	  if (logado()) {
 		  viewHome();
 	  } else {
 		  viewInicial();
