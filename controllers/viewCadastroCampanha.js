@@ -19,7 +19,7 @@ function viewCadastroCampanha() {
   
   let $enter = document.querySelector('#enter');
   $enter.addEventListener("click", function () {
-    let newCampanhar = {
+    let newCampanha = {
         "name": document.getElementById("name").value,
         "descricao": document.getElementById("lastName").value,
         "deadline": document.getElementById("card").value,

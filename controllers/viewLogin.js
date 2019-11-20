@@ -37,7 +37,7 @@ async function logar(login) {
         sessionStorage.setItem('email', data.email);
         sessionStorage.setItem('token', data.token);
         
-        let object = {value: true, timestamp: new Date().getMilliseconds};
+        let object = {value: true, timestamp: new Date().getMilliseconds, usuario: data.email};
         sessionStorage.setItem("logado", object);
     }
 };

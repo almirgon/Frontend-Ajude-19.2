@@ -1,4 +1,5 @@
 import {requestPOST} from "../util/requestPOST.js";
+import {criarURLCampanha} from "../util/criarURLCampanha.js";
 
 async function cadastrarCampanha(campanha) {
 
@@ -11,6 +12,8 @@ async function cadastrarCampanha(campanha) {
     let data = await response.json();
     
     alert("Cadastro realizado!");
+    
+    
 }
 
 export {cadastrarCampanha};
