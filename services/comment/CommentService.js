@@ -4,26 +4,21 @@ const url = API + "/v1/campaign"
 
 class CommentService{
 
-    static async createComment(comment, idCampaign){
+    static async createComment({text, idCampaign}){
         let response = await fetch(url +`/${idCampaign}/comment`, {
             method: 'POST',
-            body: JSON.stringify({comment},{idCampaign}),
+            body: JSON.stringify({text}),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
             }
 
         })
-        if(response.ok){
-            const body = await response.json()
-            const token = body.token
-            localStorage.setItem("token", token)
-        }
         return response
     }
 
-    static async reply(comment, idComment){
-        let response = await fetch(url + `/${idComment}`, {
+    static async reply({text, idComment, idCampaign}){
+        let response = await fetch(`${url}/${idCampaign}/comment/${idComment}`, {
             method: 'POST',
             body: JSON.stringify({comment}),
             headers: {
@@ -32,16 +27,11 @@ class CommentService{
             }
         })
 
-        if(response.ok){
-            const body = await response.json()
-            const token = body.token
-            localStorage.setItem("token", token)
-        }
         return response
     }
 
-    static async delete(idComment){
-        let response = await fetch(url + `/${idComment}`, {
+    static async delete({idComment,idCampaign}){
+        let response = await fetch(`${url}/${idCampaign}/comment/${idComment}`, {
             method: 'DELETE',
             body: JSON.stringify({idComment}),
             headers: {
@@ -50,11 +40,6 @@ class CommentService{
             }
         })
 
-        if(response.ok){
-            const body = await response.json()
-            const token = body.token
-            localStorage.setItem("token", token)
-        }
         return response
     }
 }

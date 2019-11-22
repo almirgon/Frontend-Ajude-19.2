@@ -1,7 +1,7 @@
 import { API } from "../../const.js"
 
 const url = API + "/v1/users"
-class SingUpService{
+class userService{
 
     static async createUser(user) {
         let response = await fetch(url, {
@@ -17,4 +17,4 @@ class SingUpService{
 
 }
 
-export default SingUpService
+export default userService
