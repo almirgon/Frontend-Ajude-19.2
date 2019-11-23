@@ -12,13 +12,17 @@ class RenderCampaign extends HTMLElement{
 
         let $busca = document.getElementById("busca");
         $busca.addEventListener("input", () => {
+          if($busca.value != ""){
             if (document.getElementById("all").value == 'on') {
                 $canvas.innerText = "";
-                this.renderAll();
+                this.renderAll($busca.value);
             } else {
                 $canvas.innerText = "";
                 this.renderFew($busca.value);
             }
+          } else {
+            $canvas.innerText = "";
+          }
         }); 
 
     }
@@ -33,16 +37,16 @@ class RenderCampaign extends HTMLElement{
             </div>`;
     }
 
-    renderAll() {
+    renderAll(busca) {
         let $canvas = document.getElementById('campaigns');
 
-        let campaign = "";
-        let campaigns = await CampaignService.getAllCampaings(campaign);
+        let campaign = busca;
+        let campaigns = await CampaignService.getBySubstring(campaign);
 
         for (item of campaigns) {
             let $d = document.createElement("ul", { is: "campaign-card" });
             $d.is.setAttribute("likes", item.likes);
-            $d.is.setAttribute("name", item.likes);
+            $d.is.setAttribute("name", item.name);
             $d.is.setAttribute("status", item.status);
             $d.is.setAttribute("url", item.url);
     
@@ -59,9 +63,10 @@ class RenderCampaign extends HTMLElement{
       let campaigns = await CampaignService.getBySubstring(campaign);
 
       for (item of campaigns) {
+        if (item.status == "Ativa")
           let $d = document.createElement("ul", { is: "campaign-card" });
           $d.is.setAttribute("likes", item.likes);
-          $d.is.setAttribute("name", item.likes);
+          $d.is.setAttribute("name", item.name);
           $d.is.setAttribute("status", item.status);
           $d.is.setAttribute("url", item.url);
   
