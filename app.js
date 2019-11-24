@@ -12,7 +12,8 @@ const routes = {
     '/login'           : Login,
     '/signup'          : User,
     '/createcampaign'  : CreateCampaign,
-    '/campaign/:id'    : Campaign
+    '/campaign/:id'    : Campaign,
+    '/' : Homepage
 
 
 };
