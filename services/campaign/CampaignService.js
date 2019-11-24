@@ -48,7 +48,7 @@ class CampaignService{
                 'Content-Type': 'application/json',
             }
         })
-        return response
+        return response.json()
 
     }
 

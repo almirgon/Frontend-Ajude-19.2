@@ -2,32 +2,27 @@ import userService from "../../services/user/userService.js"
 
 let User = {
     render: async () => /*html*/`
-    <div class="logo">
-        <img alt="AJuDE" src="../../logo.png"/>
-    </div>
     <div class="pageContainer">
         <main class="wrap">
+        <h1>Cadastro</h1>
             <form>
                 <div>
-                    <a href="colocar aqui o pag inicial">X</a>
+                    <input class="inputForm" type="text" id="firstName" placeholder="Primerio nome"/>
                 </div>
                 <div>
-                    <input type="text" id="firstName" placeholder="Primerio nome"/>
+                    <input class="inputForm" type="text" id="lastName" placeholder="Último nome"/>
                 </div>
                 <div>
-                    <input type="text" id="lastName" placeholder="Último nome"/>
+                    <input class="inputForm" type="email" id="email" placeholder="Email" />
                 </div>
                 <div>
-                    <input type="email" id="email" placeholder="Email" />
+                    <input class="inputForm" type="card" id="card" placeholder="Cartão de crédito" />
                 </div>
                 <div>
-                    <input type="card" id="card" placeholder="Cartão de crédito" />
+                    <input class="inputForm" type="password" id="password" placeholder="Senha" />
                 </div>
                 <div>
-                    <input type="password" id="password" placeholder="Senha" />
-                </div>
-                <div>
-                    <button type="submit" id="botao-de-cadastro">Cadastre-se</button>
+                    <button class="allButtons" type="submit" id="botao-de-cadastro">Cadastre-se</button>
                 </div>
             </form>
         </main>
@@ -50,9 +45,9 @@ let User = {
             const response = await userService.createUser(newUser)
             
             if(response.ok){
-                window.alert("Cadastro realizado")
+                window.alert("Cadastro realizado! Um email de boas vindas chegou na sua caixa de entrada")
             }else{
-                window.alert("Erro ao cadastrar usuário: " + response.json())
+                window.alert("Erro ao cadastrar usuário" )
             }
         }
 
