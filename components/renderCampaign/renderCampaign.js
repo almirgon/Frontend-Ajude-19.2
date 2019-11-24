@@ -32,7 +32,7 @@ class RenderCampaign extends HTMLElement{
             `<link rel="stylesheet" href="./styles/renderCampaign.css">
             <div>
               <input type = "text" id = "busca" placeholder="Digite sua busca"></input> 
-              <input type="checkbox" id="all"></input>
+              <input type="checkbox" id="all">Deseja ver todas as campanhas?</input>
               <section id="campaigns"></section>
             </div>`;
     }
