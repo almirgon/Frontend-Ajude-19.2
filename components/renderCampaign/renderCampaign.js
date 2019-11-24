@@ -31,8 +31,8 @@ class RenderCampaign extends HTMLElement{
         this.$shadow.innerHTML = 
             `<link rel="stylesheet" href="./styles/renderCampaign.css">
             <div>
-              <input type = "text" id = "busca" placeholder="Digite sua busca"> 
-              <input type="checkbox" id="all">
+              <input type = "text" id = "busca" placeholder="Digite sua busca"></input> 
+              <input type="checkbox" id="all"></input>
               <section id="campaigns"></section>
             </div>`;
     }

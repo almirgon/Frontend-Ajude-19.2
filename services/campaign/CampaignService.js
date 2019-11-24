@@ -52,7 +52,7 @@ class CampaignService{
 
     }
 
-    static async getAllCampaings(campaign){
+    static async getAllCampaings(){
         let response = await fetch(url, {
             method: 'GET',
             headers: {
