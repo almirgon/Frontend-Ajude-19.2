@@ -27,7 +27,7 @@ const router = async () => {
 
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '')
     
-    let page = routes[parsedURL] 
+    let page = routes[parsedURL] || Home 
     header.innerHTML = await NavBar.render()
     await NavBar.after_render()
     content.innerHTML = await page.render()
