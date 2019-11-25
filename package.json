@@ -3,6 +3,7 @@
   "description": "My application",
   "version": "0.0.1",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "3.4.0"
   },
   "engines": {
