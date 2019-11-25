@@ -1,12 +1,12 @@
-import Campaign from "./pages/Campaign/campaign.js"
-import CreateCampaign from "./pages/createCampaign/createCampaign.js"
-import Login from "./pages/login/login.js"
-import Profile from "./pages/profile/profile.js"
-import User from "./pages/user/user.js"
-import NavBar from "./pages/nav-bar/nav-bar.js"
+import Campaign from "../pages/Campaign/campaign.js"
+import CreateCampaign from "../pages/createCampaign/createCampaign.js"
+import Login from "../pages/login/login.js"
+import Profile from "../pages/profile/profile.js"
+import User from "../pages/user/user.js"
+import NavBar from "../pages/nav-bar/nav-bar.js"
 
-import Utils from "./utils.js"
-import Home from "./pages/home/home.js"
+import Utils from "../utils.js"
+import Home from "../pages/home/home.js"
 
 const routes = {
     '/home'            : Home,
