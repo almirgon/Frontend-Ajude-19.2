@@ -25,7 +25,6 @@ const router = async () => {
     let request = Utils.parseRequestURL()
 
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '')
-    window.history.pushState({}, parsedURL, window.location.origin + parsedURL); 
 
     let page = routes[parsedURL]
     content.innerHTML = await page.render();
@@ -33,8 +32,7 @@ const router = async () => {
   
 }
 
-window.onpopstate = () => {window.history.back();
-    router();}
+window.onpopstate = () => {router();}
 
 window.addEventListener('hashchange', router);
 
