@@ -1,9 +1,9 @@
 var express = require('express')
+var path = require('path');
 var app = express()
-//app.use(express.static('app'))
+app.use(express.static(__dirname))
 app.get('*', (req, res) => {
-     res.sendfile(__dirname + '/index.html')
-     res.writeHead(200, {'Content-Type': 'text/javascript'}); 
+     res.sendfile(path.resolve('index.html'))
     })
 app.listen(process.env.PORT || 8000);
 
