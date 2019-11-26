@@ -2,23 +2,18 @@ import LoginService from "../../services/login/loginService.js"
 
 let Login = {
     render: async () => /*html*/`
-    <div class="logo">
-    <img alt="AJuDE" src="../../logo.png"/>
-    </div>
     <div class="pageContainer">
         <main class="wrap">
+        <h1>Login</h1>
         <form>
             <div>
-                <a href="colocar aqui o pag inicial">X</a>
+                <input class="inputForm" type = "text" id = "email" placeholder="Email"> 
             </div>
             <div>
-                <input type = "text" id = "email" placeholder="Email"> 
+                <input class="inputForm" type = "password" id = "password" placeholder="Senha"> 
             </div>
             <div>
-                <input type = "password" id = "password" placeholder="Senha"> 
-            </div>
-            <div>
-                <button type="submit" id="botao-de-login">Entrar</button>
+                <button type="submit" class="allButtons" id="botao-de-login">Entrar</button>
             </div>
         </form>
         </main>
@@ -39,7 +34,9 @@ let Login = {
             const response = await LoginService.login(userData)
 
             if(response.ok){
-                window.alert("Bem vindo")
+                window.alert("Bem vindo ao AJuDE")
+                window.location.href = "/#/home"
+                window.location.reload()
             }else{
                 window.alert("Email ou senha incorreta")
             }

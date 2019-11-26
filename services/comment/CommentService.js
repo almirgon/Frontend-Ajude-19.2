@@ -14,33 +14,33 @@ class CommentService{
             }
 
         })
-        return response
+        return response.json()
     }
 
     static async reply({text, idComment, idCampaign}){
-        let response = await fetch(`${url}/${idCampaign}/comment/${idComment}`, {
+        let response = await fetch(url +`/${idCampaign}/comment/${idComment}`, {
             method: 'POST',
-            body: JSON.stringify({comment}),
+            body: JSON.stringify({text}),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
             }
         })
 
-        return response
+        return response.json()
     }
 
     static async delete({idComment,idCampaign}){
-        let response = await fetch(`${url}/${idCampaign}/comment/${idComment}`, {
+        console.log("ta pegando")
+        let response = await fetch(url +`/${idCampaign}/comment/${idComment}`, {
             method: 'DELETE',
-            body: JSON.stringify({idComment}),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
             }
         })
 
-        return response
+        return response.json()
     }
 }
 

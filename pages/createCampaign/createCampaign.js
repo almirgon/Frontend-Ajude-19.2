@@ -3,25 +3,22 @@ import CampaignService from "../../services/campaign/CampaignService.js"
 let CreateCampaign = {
     render: async () => /*html*/ `
     <main class="wrap">
-            <div>
-                <a href="colocar aqui o pag inicial">X</a>
-            </div>
             <h1>Cadastrar Campanha</h1>
             <form>
                 <div>
-                    <input type = "text" id = "name" placeholder="Nome"> 
+                    <input class="inputForm" type = "text" id = "name" placeholder="Nome"> 
                 </div>
                 <div>
-                    <input type = "date" id ="date" placeholder="Data de validade"> 
+                    <input class="inputForm" type = "date" id ="date" placeholder="Data de validade"> 
                 </div>
                 <div>
-                    <input type = "text" id = "description" placeholder="Descrição"> 
+                    <input class="inputForm" type = "text" id = "description" placeholder="Descrição"> 
                 </div>
                 <div>
-                    <input type = "number" id = "goal" placeholder="Meta"> 
+                    <input class="inputForm" type = "number" id = "goal" placeholder="Meta"> 
                 </div>
                 <div>
-                    <button type="submit" id="botao-de-cadastrar-campaign">Cadastrar</button>
+                    <button class="allButtons" type="submit" id="botao-de-cadastrar-campaign">Cadastrar</button>
                 </div>
             </form>
     </main>
@@ -36,6 +33,8 @@ let CreateCampaign = {
             const description = document.getElementById("description").value
             const date = document.getElementById("date").value
             const goal = document.getElementById("goal").value
+
+            console.log(date)
 
             const campaginData = {name,description,date,goal}
 

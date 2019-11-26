@@ -1,8 +1,6 @@
 import ProfileService from "../../services/profile/ProfileService.js"
 import Utils from "../../utils.js"
 
-import '../../components/campaign-card/campaignCard.js'
-
 let profile
 
 let Profile = {
@@ -11,30 +9,26 @@ let Profile = {
     profile = await ProfileService.profile(request.id)
     const pageHTML = /*html*/ `
     <main class="wrap">
-            <div>
-                <a href="colocar aqui o pag inicial">X</a>
-            </div>
             <h1>Perfil</h1>
-            <p> Nome: ${profile.user.firstName} ${profile.user.lastName} </p>
-            <p> Email: ${profile.user.email} </p>
-            <div id="campaigns">
-            </div>
+            <p class="pProfile"> Nome: ${profile.user.firstName} ${profile.user.lastName} </p>
+            <p class="pProfile"> Email: ${profile.user.email} </p>
+            <h3>Campanhas criadas</h3>
+            <ul> ${profile.campaigns.map(campaign => /*html*/`<p class="campaignsUser"><a class="anchorCampaignsUser" href="#/campaign/${campaign.url}">${campaign.name}</a></p>`
+            ).join('\n ')} </ul>
+            <h3> Fez doações para </h3>
+            <ul> ${profile.donations.map(donation => /*html*/ `<p class="donationsUser"><a class="anchorDonationsUser" href="#/campaign/${donation.url}">${donation.name}</a></p>`
+            ).join('\n')} </ul>
+
     </main>`
     return pageHTML
     }
     , after_render: async () => {
-        const $campaigns = document.getElementById("campaigns")
-        profile.campaigns.forEach(subject => {
-            let $subject = document.createElement('campaign-card')
-            $subject.setAttribute('name', subject.name);
-            $subject.setAttribute('likes', subject.numberLikes);
-            $subject.setAttribute('url', subject.url);
-            $subject.setAttribute('status', subject.status);
+        
+        }
 
-            $campaigns.appendChild($subject)
-        })
+
     }
     
-}
+
 
 export default Profile
