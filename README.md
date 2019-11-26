@@ -16,8 +16,8 @@ O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio d
 ## Estrutura
 
 - `components` Diretório que contém o código referente ao web component da aplicação.
-- `/pages` Diretório que contém as páginas da aplicação.
-- `/services` Diretório que contém os services da aplicação responsáveis por fazer as requisições ao backend.
+- `pages` Diretório que contém as páginas da aplicação.
+- `services` Diretório que contém os services da aplicação responsáveis por fazer as requisições ao backend.
  
 ## Links 
 Colocar youtube aqui
