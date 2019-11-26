@@ -20,7 +20,7 @@ O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio d
 - `/services` Diretório que contém os services da aplicação responsáveis por fazer as requisições ao backend.
  
 ## Links 
-
+Colocar youtube aqui
 
 ## Swagger
 
@@ -28,6 +28,6 @@ O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio d
  
 ## BackEnd
 
-[Repositório do Front](https://github.com/almirgon/Backend-Ajude-19.2/)
+[Repositório do Back](https://github.com/almirgon/Backend-Ajude-19.2/)
 
 
