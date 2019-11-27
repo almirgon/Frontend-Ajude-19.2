@@ -10,7 +10,7 @@
 
 ## Sobre o projeto
 
-O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio de nem um framework.
+O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio de nem um framework. O deploy da aplicação foi realizado no netlify
 
 
 ## Estrutura
@@ -20,7 +20,9 @@ O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio d
 - `services` Diretório que contém os services da aplicação responsáveis por fazer as requisições ao backend.
  
 ## Links 
-Colocar youtube aqui
+
+[Link para o Youtube](https://www.youtube.com/watch?v=jEhp7V0sIeQ) 
+[Link para a aplicação](https://musing-morse-69cc91.netlify.com) 
 
 ## Swagger
 
