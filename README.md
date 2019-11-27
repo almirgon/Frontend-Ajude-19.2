@@ -21,8 +21,8 @@ O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio d
  
 ## Links 
 
-[Link para o Youtube](https://www.youtube.com/watch?v=jEhp7V0sIeQ) 
-[Link para a aplicação](https://musing-morse-69cc91.netlify.com) 
+- [Link para o Youtube](https://www.youtube.com/watch?v=jEhp7V0sIeQ) 
+- [Link para a aplicação](https://musing-morse-69cc91.netlify.com) 
 
 ## Swagger
 
