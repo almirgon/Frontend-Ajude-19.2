@@ -15,9 +15,24 @@ O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio d
 
 ## Estrutura
 
-- `components` Diretório que contém o código referente ao web component da aplicação.
-- `pages` Diretório que contém as páginas da aplicação.
-- `services` Diretório que contém os services da aplicação responsáveis por fazer as requisições ao backend..
+- `frontend` Caminho das as pastas do front.
+  - `components` Diretório que contém o código referente ao web component da aplicação.
+  - `pages` Diretório que contém as páginas da aplicação.
+    - `campaign` Diretório com arquivo da campanha.
+    - `createCampaign` Diretório com arquivo da criação de uma campanha.
+    - `donation` Diretório com arquivo sobre doação para campanha(s).
+    - `home` Diretório com arquivo define a home.
+    - `login` Diretório com arquivo do login do usuário.
+    - `nav-bar` Diretório com arquivo da nav-bar(menu) da aplicação.
+    - `profile` Diretório com arquivo do perfil do usuário.
+    - `user` Diretório com arquivo da criação do usuário.
+  - `services`  Diretório que contém os services da aplicação responsáveis por fazer as requisições ao backend.
+    - `campaign` Diretório responsável por conter o CampaignService.js que realiza a requisição do metodos(criar, pegar pela url, dar like, pesquisar por substring) para o backend.
+    - `comment` Diretório responsável por conter o CommentService.js que realiza a requisição do metodos(criar comentário, responder e deletar) para o backend.
+    - `donation` Diretório responsável por conter o DonationService.js que realiza a requisição do metodo(doar) para o backend.
+    - `login` Diretório responsável por conter o LoginService.js que realiza a requisição do metodos(login e seta o token para o local storage) para o backend.
+    - `profile` Diretório responsável por conter o ProfileService.js que realiza a requisição do metodos(pegar o perfil) para o backend.
+    - `user` Diretório responsável por conter o UserService.js que realiza a requisição do metodos(criar um usuario) para o backend.
  
 ## Links 
 
