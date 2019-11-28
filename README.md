@@ -15,7 +15,7 @@ O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio d
 
 ## Estrutura
 
-- `frontend` Caminho das as pastas do front.
+- `frontend` Caminho das pastas do front.
   - `components` Diretório que contém o código referente ao web component da aplicação.
   - `pages` Diretório que contém as páginas da aplicação.
     - `campaign` Diretório com arquivo da campanha.
