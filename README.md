@@ -16,8 +16,11 @@ O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio d
 ## Estrutura
 
 - `components` Diretório que contém o código referente ao web component da aplicação.
+ - `/business` Diretório onde encontra-se os arquivos CampaignBusinessDelegate.java, CommentBusinessDelegate.java e UserProfileBusinessDelegate.java.
 - `pages` Diretório que contém as páginas da aplicação.
+ - `/business` Diretório onde encontra-se os arquivos CampaignBusinessDelegate.java, CommentBusinessDelegate.java e UserProfileBusinessDelegate.java.
 - `services` Diretório que contém os services da aplicação responsáveis por fazer as requisições ao backend.
+ - `/business` Diretório onde encontra-se os arquivos CampaignBusinessDelegate.java, CommentBusinessDelegate.java e UserProfileBusinessDelegate.java.
  
 ## Links 
 
