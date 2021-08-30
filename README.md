@@ -1,52 +1,38 @@
-# AJuDE - FrontEnd
+# UFCGBot 
 
-> Repositório referente ao frontend do projeto final da disciplina de Projeto de Software da UFCG (2019.2).
+> Repositório referente ao projeto da disciplina Projeto 1 do curso de Ciência da Computação - UFCG (2020.2).
 
 ## Descrição 
 
-<p> O AJuDE é uma ferramenta que permite a organização de doações para projetos/campanhas. Antes de continuar vamos entender crowdfunding: </p>
+<p> O UFCGBot é um Minimum Viable Product (MVP) com o intuito de facilitar o atendimento remoto a clientes da Comissão de Processos Vestibulares da UFCG (Comprov) </p>
 
-> Financiamento coletivo, também conhecido como crowdfunding, consiste na obtenção de capital para iniciativas de interesse coletivo através da agregação de múltiplas fontes de financiamento, em geral pessoas físicas interessadas na iniciativa. O termo é muitas vezes usado para descrever especificamente ações na Internet com o objetivo de arrecadar dinheiro para artistas, jornalismo cidadão, pequenos negócios e empresas emergentes, campanhas políticas, iniciativas de software livre, filantropia e ajuda a regiões atingidas por desastres, entre outros.
+> Possui um fluxograma de mensagens automáticas que serão enviadas para um usuário que interage com a Comprov via Telegram, e que funcionará como atendimento eletrônico automatizado que permite a economia de tempo e torna o acesso aos processos mais faceis.   
 
 ## Sobre o projeto
 
-O frontend foi desenvolvido puramente em HTML, JavaScript e CSS sem o auxílio de nem um framework. O deploy da aplicação foi realizado no netlify
-
+O projeto foi desenvolvido em node.js utilizando a API do Telegram para a estruturação do Bot. Além disso, utiliza biliotecas como axios, cors, express, localtunnel e npmlog. 
 
 ## Estrutura
 
-- `frontend` Caminho das pastas do front.
-  - `components` Diretório que contém o código referente ao web component da aplicação.
-  - `pages` Diretório que contém as páginas da aplicação.
-    - `campaign` Diretório com arquivo da campanha.
-    - `createCampaign` Diretório com arquivo da criação de uma campanha.
-    - `donation` Diretório com arquivo sobre doação para campanha(s).
-    - `home` Diretório com arquivo define a home.
-    - `login` Diretório com arquivo do login do usuário.
-    - `nav-bar` Diretório com arquivo da nav-bar(menu) da aplicação.
-    - `profile` Diretório com arquivo do perfil do usuário.
-    - `user` Diretório com arquivo da criação do usuário.
-  - `services`  Diretório que contém os services da aplicação responsáveis por fazer as requisições ao backend.
-    - `campaign` Diretório responsável por conter o CampaignService.js que realiza a requisição do metodos(criar, pegar pela url, dar like, pesquisar por substring) para o backend.
-    - `comment` Diretório responsável por conter o CommentService.js que realiza a requisição do metodos(criar comentário, responder e deletar) para o backend.
-    - `donation` Diretório responsável por conter o DonationService.js que realiza a requisição do metodo(doar) para o backend.
-    - `login` Diretório responsável por conter o LoginService.js que realiza a requisição do metodos(login e seta o token para o local storage) para o backend.
-    - `profile` Diretório responsável por conter o ProfileService.js que realiza a requisição do metodos(pegar o perfil) para o backend.
-    - `user` Diretório responsável por conter o UserService.js que realiza a requisição do metodos(criar um usuario) para o backend.
+- `raiz` Caminho das pastas do projeto.
+  - `config` Diretório que contém as variaveis de ambiente de desenvolvimento e produção.
+  - `docs` Diretório que contém os documentos de como utilizar o Docker Container, registrar uma imagem no Docker e possui links uteis que podem ser usados para auxilar o desenvolvimento.
+  - `src` Diretório mais importante do projeto, o source contém o código bruto antes da minificação ou compilação, sendo usada para leitura ou edição do código.
+    - `controllers` Diretório onde encontra-se os arquivos MessageController.js e WebhookController.js que são responsáveis por encapsular os services e lidar com a comunicação da API.
+        - `MessageController.js` Arquivo responsável por possuir metódos para enviar mensagens para um usuário especifico e utilizar o Webhook para receber e gerenciar mensagens dos usuários.
+        - `WebhookController.js` Arquivo responsável por possuir o metódo para registrar uma novo url do webhook utilizando a Telegram API.
+    - `routes` Diretório onde encontra-se o arquivo index.js que é responsável por utilizar a biblioteca express e definir as rotas da API.
+    - `services`  Diretório onde encontra-se os arquivos api.js e telegram.js que utiliza a biblioteca axios e implementa a logica de negocio da aplicação.
+       - `api.js` Arquvio responsável por criar uma nova instância do axios com uma configuração personalizada (TOKEN do Bot). 
+       - `telegram.js` Arquivo responsável por possuir metódos básicos, para o funcionamento da aplicação, como enviar mensagem, responder mensagem e registrar um webhook para receber atualizações
+    - `tests` Diretório que possui arquivos de testes unitarios que utilizam as biblitecas mocha e chai.
+    - `utils` Diretório onde encontra-se os arquivos que auxiliam no desenolvimento e esturturação do projeto.
+      - `errorMessages.js` Arquivo responsável por estruturar e exportar as mensagens de error.
+      - `flowchart.js` Arquivo responsável por possuir uma implementação de uma maquina de estados que representa o fluxograma da aplicação.
+      - `log.js`  Arquivo responsável por utilizar a bibilioteca npmlog e possuir funções que criam os logs do projeto
+      - `messageTypes.js` Arquivo responsável por possuir o metódo que cria opções no teclado do usuário para responder mensagens.
+      - `storage.js` Arquivo responsável por possuir uma classe que contém metódos básicos de armazenamento para o banco de dados.
+    - `serve.js`  Arquivo que utiliza a biblioteca express para definir as rotas, a porta e consumir as bibliotecas para rodar a aplicação localmente.
+    - `tunnel.js`  Arquivo que utiliza a biblioteca localtunnel para compartilhar um serviço web da máquina local sem alterar nenhuma configuração de DNS ou Firewall. Assim disponibilizando uma URL exclusiva, acessível publicamente, que fará o proxy de todas as solicitações para o servidor local.
  
-## Links 
-
-- [Link para o Youtube](https://www.youtube.com/watch?v=jEhp7V0sIeQ) 
-- [Link para a aplicação](https://musing-morse-69cc91.netlify.com) 
-- [Link para o protótipo inicial](https://marvelapp.com/5c3dji3/screen/62858958) 
-
-
-## Swagger
-
-[Link para o Swagger](https://ajudepsoft192.herokuapp.com/api/swagger-ui.html#/)
- 
-## BackEnd
-
-[Repositório do Back](https://github.com/almirgon/Backend-Ajude-19.2/)
-
 
