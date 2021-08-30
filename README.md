@@ -42,7 +42,7 @@ O projeto foi desenvolvido em node.js utilizando a API do Telegram para a estrut
 
 ## Run
 
-- `1` npm install 
-- `2` cd src
-- `3` node server.js (Log: info server.js Server listening on port 8443)
+`1` npm install 
+`2` cd src
+`3` node server.js (Log: info server.js Server listening on port 8443)
 
